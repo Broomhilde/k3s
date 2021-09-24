@@ -147,11 +147,11 @@ spec:
             path: /health
             port: 8080
             scheme: HTTP
-          initialDelaySeconds: 60
+          initialDelaySeconds: 200
           periodSeconds: 10
-          timeoutSeconds: 1
+          timeoutSeconds: 30
           successThreshold: 1
-          failureThreshold: 3
+          failureThreshold: 30
         readinessProbe:
           httpGet:
             path: /ready
@@ -161,7 +161,7 @@ spec:
           periodSeconds: 2
           timeoutSeconds: 1
           successThreshold: 1
-          failureThreshold: 3
+          failureThreshold: 5
       dnsPolicy: Default
       volumes:
         - name: config-volume
